@@ -1,6 +1,30 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <div class="column">
+    <div class="row">
+      <h1>Pages#home</h1>
 
-<% if user_signed_in? %>
-  coucou
-<% end %>
+      <% if user_signed_in? %>
+        <p>Hello <%= current_user.email %></p>
+      <% else %>
+        <p>You are not logged in</p>
+      <% end %>
+    </div>
+      <h2>Ariane offer</h2>
+      <%= cl_image_tag "zpvpuig7nboiuwzoiy5h", alt: "Rocket from Hergé",
+          width: 300, height: 300 %>
+      <%= cl_image_tag "ggttzcnwgewsezuactxh", alt: "Rocket from Hergé",
+          width: 300, height: 300 %>
+      <%= cl_image_tag "zwfrd11wtkzutrbdppdn", alt: "Rocket from Hergé",
+          width: 300, height: 300 %>
+      <%= cl_image_tag "tqwtnu1fpzw4bwsvlohr", alt: "Rocket from Hergé",
+          width: 300, height: 300 %>
+      <%= cl_image_tag "aq6bkxpaaucxungw5iv8", alt: "Rocket from Hergé",
+          width: 300, height: 300 %>
+      <%= cl_image_tag "qvny5tifwfb9k3jtpdbr", alt: "Rocket from Hergé",
+          width: 300, height: 300 %>
+      <%= cl_image_tag "denlofm2xnwworw31gf1", alt: "Rocket from Hergé",
+          width: 300, height: 300 %>
+      <%= cl_image_tag "yo17oginicrucm9dyefi", alt: "Rocket from Hergé",
+          width: 300, height: 300 %>
+  </div>
+</div>
