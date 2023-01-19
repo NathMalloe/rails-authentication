@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="column">
+    <div class="row">
+      <%= simple_form_for [@rocket, @booking] do |f| %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
