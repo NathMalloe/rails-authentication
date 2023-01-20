@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :bookings, dependent: :destroy
   has_many :rockets, dependent: :destroy
+  has_one_attached :photo
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :rating, :inclusion => { :in => 0..5 }, :presence => { :message => " must be within 0-5" }

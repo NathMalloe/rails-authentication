@@ -1,6 +1,7 @@
 class Rocket < ApplicationRecord
   belongs_to :user
   has_many :bookings
+  has_one_attached :photo
   validates :name, presence: true
   validates :destination, presence: true, inclusion: { in: %w(Mars Earth Saturn Pluton Venus Mercure Moon), message: "%{value} is not a valid planet. Please choose a planet between :  Mars, Earth, Saturn, Pluton, Venus, Mercure and Moon."}
   validates :description, presence: true, length: { minimum: 2 }
