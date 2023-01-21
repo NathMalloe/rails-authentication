@@ -39,7 +39,7 @@ ariane_5.photo.attach(io: file, filename: "ariane1.png", content_type: "image/jp
 file = URI.open("https://res.cloudinary.com/dton44gcy/image/upload/v1674144065/yo17oginicrucm9dyefi.jpg")
 ariane_6.photo.attach(io: file, filename: "ariane1.png", content_type: "image/jpg")
 
-file = URI.open("https://res.cloudinary.com/dton44gcy/image/upload/v1674247430/k9ichph5ij06jis82b5s.jpg")
+file = URI.open("https://res.cloudinary.com/dton44gcy/image/upload/v1674321181/jpd_profile_q0gj5a.png")
 jeanpierre.photo.attach(io: file, filename: "jpd_profile.jpg", content_type: "image/jpg")
 
 file = URI.open("https://res.cloudinary.com/dton44gcy/image/upload/v1674248768/ybxnuoodebwxmnzewjyy.jpg")

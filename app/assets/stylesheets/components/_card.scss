@@ -47,6 +47,7 @@
 .flex {
   display: flex;
 }
+
 .flex-align {
   display: flex;
   align-items: center;
@@ -66,6 +67,10 @@
   height: 180px;
   background-position: center;
   background-size: cover;
+}
+
+.rocket-card-title {
+  color: rgb(44, 44, 44);
 }
 
 .rocket-card-content {

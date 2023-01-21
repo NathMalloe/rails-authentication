@@ -2,12 +2,13 @@
   <div class="row">
     <div class="col-8">
       <div class="rocket-show-card">
+        <%= cl_image_tag(@rocket.photo.key, width: 800, height: 600, crop: :fill) %>
         <h1><%= @rocket.name %></h1>
-        <p class="rocket-show-destination"><%= @rocket.destination %></p>
+        <h3 class="rocket-show-destination">Going to : <%= @rocket.destination %></h3>
       </div>
       <div class="rocket-show-card">
-        <h3>A bit more about this rocket...</h3>
-        <p><%= @rocket.description %></p>
+        <h3>This rocket offers a unique experience :</h3>
+        <h3><%= @rocket.description %></h3>
       </div>
     </div>
 
@@ -32,7 +33,7 @@
           </div>
           <input type="submit" value="Book" class="btn btn-success mt-2" style="width: 100%" onclick="window.location.href='booking>
         </form> %>
-        
+
       </div>
       <div class="rocket-show-card">
         <h3>Details</h3>
