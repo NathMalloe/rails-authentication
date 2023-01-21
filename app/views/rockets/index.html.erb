@@ -38,7 +38,7 @@
             </div>
           </div>
           <div class="rocket-card-actions">
-            <%= link_to "More info", rocket_path(rocket) %>
+            <%= link_to "More info", rocket_path(rocket), target: :_blank %>
             <%= link_to "Remove", rocket_path(rocket),
                 data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
                 class: "ms-3 text-danger"
