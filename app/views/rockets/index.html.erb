@@ -10,7 +10,7 @@
       <% if @query %>
         <p>You searched for <strong><%= @query %></strong>. We found <%= @rockets.count %> rockets out of our <%= Rocket.count %> on our website.</p>
       <% else %>
-        <p>All <%= Rocket.count %> rockets.</p>
+        <p>We found <%= @rockets.count %> rockets out of <%= Rocket.count %> on our website.</p>
       <% end %>
     </div>
   </div>
@@ -24,25 +24,20 @@
             <div class="rocket-card-title">
               <h4><%= rocket.name %></h4>
             </div>
-            <p><%= rocket.destination %></p>
+            <p>Destination: <%= rocket.destination %></p>
             <p><%= rocket.description %></p>
             <div class="flex">
               <div class="flex align-items-center">
-                <i class="fa-solid fa-people-line"></i>
+                <i class="fa-solid fa-star"></i>
                 <span><%= rocket.rating %></span>
               </div>
               <div class="flex align-items-center ms-3">
-                <i class="fa-solid fa-star"></i>
-                <span><%= rocket.price_per_earthday %></span>
+                <span>Price: <%= rocket.price_per_earthday %> StarCoins</span>
               </div>
             </div>
           </div>
           <div class="rocket-card-actions">
             <%= link_to "More info", rocket_path(rocket), target: :_blank %>
-            <%= link_to "Remove", rocket_path(rocket),
-                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                class: "ms-3 text-danger"
-            %>
           </div>
         </div>
       </div>

@@ -1,16 +1,18 @@
-<div class="container">
-  <div class="column">
-    <div class="row">
-      <h1>Indulge yourself with a fantastic Rocket Experience !</h1>
-        <%= link_to "Display all our Rockets to rent", rockets_path %>
-
-      <% if user_signed_in? %>
-        <p>Hello <%= current_user.first_name %> <%= current_user.last_name %></p>
-      <% else %>
-        <p>You are not logged in</p>
-      <% end %>
-    </div>
-      <h2>Explore our Unique Rocket offering</h2>
+<div class="banner cover mt-5 mb-2 d-flex align-items-center justify-content-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/586031/pexels-photo-586031.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);">
+  <div class="container text-center text-black">
+    <h1><strong> Indulge yourself with a fantastic Rocket Experience ! </strong></h1>
+    <p>Explore our Unique Rocket offering.</p>
+    <a class="btn btn-secondary btn-flat mt-5" href="./rockets">Display all our Rockets to rent</a>
   </div>
-
 </div>
+
+
+<%# <div class="container"> %>
+  <%# <div class="cover mt-5 mb-4 d-flex align-items-center justify-content-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path "sldxao2y6i46arsesgtv", height: 300, crop: :fill %>
+    <%# <div class="text-center text-black"> %>
+      <%# <h1 class="m-4">Indulge yourself with a fantastic Rocket Experience !</h1> %>
+      <%# <h2 class="m-3">Explore our Unique Rocket offering</h2> %>
+      <%# <%= link_to "Display all our Rockets to rent", rockets_path, class:"btn btn-secondary btn-flat mt-5 mb-4"%>
+    <%# </div> %>
+  <%# </div> %>
+<%# </div> %>
