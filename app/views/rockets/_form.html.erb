@@ -1,0 +1,8 @@
+<%= simple_form_for(rocket) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :destination %>
+  <%= f.input :description %>
+  <%= f.input :price_per_earthday %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

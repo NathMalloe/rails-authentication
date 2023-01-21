@@ -1,0 +1,54 @@
+<div class="container margin-top-negative">
+  <div class="row">
+    <div class="col-8">
+      <div class="rocket-show-card">
+        <h1><%= @rocket.name %></h1>
+        <p class="rocket-show-destination"><%= @rocket.destination %></p>
+      </div>
+      <div class="rocket-show-card">
+        <h3>A bit more about this rocket...</h3>
+        <p><%= @rocket.description %></p>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="rocket-show-card">
+        <h5>Book this rocket!</h5>
+
+        <form action="">
+          <div class="input-group">
+            <span class="input-group-text" id="start-date-label">From:</span>
+            <input type="text" class="form-control" placeholder="12/10/2017" aria-label="start-date" aria-describedby="start-date-label">
+          </div>
+          <div class="input-group mt-2">
+            <span class="input-group-text" id="end-date-label">To:</span>
+            <input type="text" class="form-control" placeholder="18/10/2017" aria-label="end-date" aria-describedby="start-date-label">
+          </div>
+          <input type="submit" value="Book" class="btn btn-success mt-2" style="width: 100%">
+        </form>
+      </div>
+      <div class="rocket-show-card">
+        <h3>Details</h3>
+        <div class="flex">
+          <div class="flex">
+            Rating : <%= @rocket.rating %>
+          </div>
+          <div class="flex ms-3">
+            <%= @rocket.price_per_earthday %> StarCoins
+          </div>
+        </div>
+      </div>
+      <div class="rocket-show-card">
+        <div class="flex-align">
+          <h6 class="no-mb">Share</h6>
+
+          <div class="flex">
+            <i class="fa-brands fa-facebook-square me-2"></i>
+            <i class="fa-brands fa-twitter-square me-2"></i>
+            <i class="fa-brands fa-pinterest-square me-2"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
