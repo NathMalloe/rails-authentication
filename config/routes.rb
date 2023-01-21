@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
-  resources :rockets, only: %i[index show create destroy] do
+  resources :rockets, only: %i[index show new create destroy] do
     resources :bookings, only: %i[new create]
   end
 
