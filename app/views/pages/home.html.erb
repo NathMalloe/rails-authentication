@@ -2,6 +2,7 @@
   <div class="column">
     <div class="row">
       <h1>Indulge yourself with a fantastic Rocket Experience !</h1>
+        <%= link_to "Display all our Rockets to rent", rockets_path %>
 
       <% if user_signed_in? %>
         <p>Hello <%= current_user.email %></p>
@@ -10,7 +11,7 @@
       <% end %>
     </div>
       <h2>Explore our Unique Rocket offering</h2>
-      <%= cl_image_tag "https://res.cloudinary.com/dton44gcy/image/upload/v1674142938/zwfrd11wtkzutrbdppdn.jpg", alt: "Ariane 1",
+      <%= url('<%= cl_image_path booking.rocket.photo.key'), alt: "Ariane 1",
           width: 300, height: 300 %>
       <%= cl_image_tag "https://res.cloudinary.com/dton44gcy/image/upload/v1674142927/ay7z0avon645q6p1ccuo.jpg", alt: "Ariane 2",
           width: 300, height: 300 %>
@@ -23,4 +24,5 @@
       <%= cl_image_tag "https://res.cloudinary.com/dton44gcy/image/upload/v1674144065/yo17oginicrucm9dyefi.jpg", alt: "Ariane 6",
           width: 300, height: 300 %>
   </div>
+
 </div>
