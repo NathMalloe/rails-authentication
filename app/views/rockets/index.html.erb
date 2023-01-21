@@ -1,0 +1,51 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12">
+      <h1>All our Rockets</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <% if @query %>
+        <p>You searched for <strong><%= @query %></strong>. We found <%= @rockets.count %> rockets out of our <%= Rocket.count %> on our website.</p>
+      <% else %>
+        <p>All <%= Rocket.count %> rockets.</p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @rockets.each do |rocket| %>
+      <div class="col-md-4">
+        <div class="rocket-card">
+          <div class="rocket-card-image"></div>
+          <div class="rocket-card-content">
+            <div class="rocket-card-title">
+              <h4><%= rocket.name %></h4>
+            </div>
+            <p><%= rocket.destination %></p>
+            <p><%= rocket.description %></p>
+            <div class="flex">
+              <div class="flex align-items-center">
+                <i class="fa-solid fa-people-line"></i>
+                <span><%= rocket.rating %></span>
+              </div>
+              <div class="flex align-items-center ms-3">
+                <i class="fa-solid fa-star"></i>
+                <span><%= rocket.price_per_earthday %></span>
+              </div>
+            </div>
+          </div>
+          <div class="rocket-card-actions">
+            <%= link_to "More info", rocket_path(rocket) %>
+            <%= link_to "Remove", rocket_path(rocket),
+                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                class: "ms-3 text-danger"
+            %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
