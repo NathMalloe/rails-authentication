@@ -1,19 +1,9 @@
-<div class="container">
-  <div class="column">
-    <div class="row">
-<%# on veut une carte au milieu de la page avec les infos saisies (start et end date) + le calcul du prix (prix de base de la fusée * end - start date) + le status (confirmed)%>
-      <div class="card-trip">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <div class="card-trip-infos">
-          <div>
-            <h2>Recap of your booking</h2>
-            <p>Rocket name</p>
-          </div>
-          <h2 class="card-trip-pricing">Total : <%= @booking.price %></h2>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-        </div>
-      </div>
+<div class="cards">
 
+  <% @booking_list.each do |booking| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path booking.rocket.photo.key, height: 300, crop: :fill %>')">
+      <%= booking.rocket.name %>, <%= booking.start_date %>, <%= booking.end_date %>, <%= booking.status %>, <%= booking.price %>
     </div>
-  </div>
+  <% end %>
+
 </div>

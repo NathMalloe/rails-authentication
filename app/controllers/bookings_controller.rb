@@ -1,5 +1,10 @@
 class BookingsController < ApplicationController
   def index
+    @bookings = Booking.all
+    @booking_list = []
+    @bookings.each do |booking|
+     @booking_list << booking if booking.rocket.user == current_user
+    end
   end
 
   def show
@@ -18,6 +23,7 @@ class BookingsController < ApplicationController
     @booking.rocket = @rocket
     @booking.user = current_user
     @booking.price = total_price(@booking, @rocket)
+    @booking.status = "booked"
     if @booking.save
       redirect_to booking_path(@booking)
     else
