@@ -1,7 +1,7 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col-12">
-      <h1>All our Rockets</h1>
+      <h1>Best Rockets to Rent</h1>
     </div>
   </div>
 
@@ -19,7 +19,9 @@
     <% @rockets.each do |rocket| %>
       <div class="col-md-4">
         <div class="rocket-card">
-          <div class="rocket-card-image"></div>
+          <div class="rocket-card-image">
+            <%= cl_image_tag(rocket.photo.key, width: 400, height: 180, crop: :fill) %>
+          </div>
           <div class="rocket-card-content">
             <div class="rocket-card-title">
               <h4><%= rocket.name %></h4>
