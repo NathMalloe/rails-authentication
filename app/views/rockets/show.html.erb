@@ -1,4 +1,4 @@
-<div class="container margin-top-negative">
+<div class="container margin-top">
   <div class="row">
     <div class="col-8">
       <div class="rocket-show-card">
@@ -14,12 +14,30 @@
 
     <div class="col-4">
       <div class="rocket-show-card">
-        <h5>Book this rocket!</h5>
+        <h1>Book this rocket!</h1>
 
-          <%= simple_form_for [@rocket, @booking] do |f| %>
-            <%= f.input :start_date %>
-            <%= f.input :end_date %>
-            <%= f.submit %>
+          <%= simple_form_for [@rocket, @booking],
+                              html: {
+                                data: {
+                                  controller: 'flatpickr'
+                                }
+                               } do |f| %>
+            <%= f.input :start_date,
+                        as: :string,
+                        input_html: {
+                          data: {
+                            flatpickr_target: 'startDateInput',
+                          }
+                        } %>
+            <%= f.input :end_date,
+                        as: :string,
+                        input_html: {
+                        # class: 'd-none',
+                          data: {
+                            flatpickr_target: 'endDateInput'
+                          }
+                        } %>
+            <%= f.submit 'Book now!', class: 'btn btn-primary' %>
           <% end %>
 
         <%# <form action="">
@@ -42,7 +60,7 @@
             Rating : <%= @rocket.rating %>
           </div>
           <div class="flex ms-3">
-            <%= @rocket.price_per_earthday %> StarCoins
+            <%= @rocket.price_per_earthday %> StarCoins / EarthDay
           </div>
         </div>
       </div>
