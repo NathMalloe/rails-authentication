@@ -16,11 +16,13 @@ class RocketsController < ApplicationController
 
   def new
     @rocket = Rocket.new
+    @rocket.user = current_user
   end
 
   def create
     @rocket = Rocket.new(rocket_params)
-    if @rocket.save
+    @rocket.user = current_user
+    if @rocket.save!
       redirect_to rockets_path
     else
       render :new, status: :unprocessable_entity
@@ -49,6 +51,6 @@ class RocketsController < ApplicationController
   end
 
   def rocket_params
-    params.require(:rocket).permit(:name, :destination, :description, :price_per_earthday, :rating) # Adding picture url ?
+    params.require(:rocket).permit(:name, :destination, :description, :price_per_earthday, :rating, :user) # Adding picture url ?
   end
 end
