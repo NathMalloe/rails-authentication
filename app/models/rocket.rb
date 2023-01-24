@@ -10,4 +10,10 @@ class Rocket < ApplicationRecord
   validates :description, presence: true, length: { minimum: 2 }
   validates :rating, :inclusion => { :in => 0..5 }, :presence => { :message => " must be within 0-5" }
   validates :name, presence: true
+
+  include AlgoliaSearch
+
+  algoliasearch do
+    attribute :name, :description, :destination
+  end
 end
