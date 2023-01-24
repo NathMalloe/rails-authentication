@@ -20,7 +20,9 @@
       <div class="col-md-4">
         <div class="rocket-card">
           <div class="rocket-card-image">
-            <%= cl_image_tag(rocket.photo.key, width: 400, height: 180, crop: :fill) %>
+            <% if rocket.photo.key %>
+              <%= cl_image_tag(rocket.photo.key, width: 400, height: 180, crop: :fill) %>
+            <% end %>
           </div>
           <div class="rocket-card-content">
             <div class="rocket-card-title">
