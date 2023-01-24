@@ -1,19 +1,21 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.all
-    @booking_list = []
+    @booking_list_as_owner = []
+    @booking_list_as_traveller = []
     @bookings.each do |booking|
-     @booking_list << booking if booking.rocket.user == current_user
+      @booking_list_as_owner << booking if booking.rocket.user == current_user
+      @booking_list_as_traveller << booking if booking.user == current_user
     end
   end
 
   def show
-    # @rocket = Rocket.find(params[:id])
+    @rocket = Rocket.find(params[:id])
     @booking = Booking.find(params[:id])
   end
 
   def new
-    @rocket = Rocket.find(params[:rocket_id])
+    # @rocket = Rocket.find(params[:rocket_id])
     @booking = Booking.new
   end
 
