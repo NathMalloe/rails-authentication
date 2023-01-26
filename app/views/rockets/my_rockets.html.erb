@@ -1,30 +1,7 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col-12">
-      <h1>Best Rockets to Rent</h1>
-    </div>
-  </div>
-  <%# <div>
-    <form class="form-inline d-flex">
-      <input type="text" class="form-control" placeholder="Search for a Rocket..." id="search-input">
-      <button type="submit" class="btn btn-light pl-2">Search</button>
-    </form>
-  </div> %>
-  <%= form_with url: rockets_path, method: :get, class: "d-flex m-4" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Search for a rocket"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
-  <div class="row">
-    <div class="col">
-      <% if @query %>
-        <p>You searched for <strong><%= @query %></strong>. We found <%= @rockets.count %> rockets out of our <%= Rocket.count %> on our website.</p>
-      <% else %>
-        <p>We found <%= @rockets.count %> rockets out of <%= Rocket.count %> on our website.</p>
-      <% end %>
+      <h1>Here are all the rockets you're renting</h1>
     </div>
   </div>
 
@@ -40,9 +17,6 @@
           <div class="rocket-card-content">
             <div class="rocket-card-title">
               <h4><%= rocket.name %></h4>
-              <div>
-                Owner: <%= rocket.user.first_name%><%= cl_image_tag(rocket.user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
-              </div>
             </div>
             <p>Destination: <%= rocket.destination %></p>
             <p><%= rocket.description %></p>
@@ -62,7 +36,7 @@
             </div>
           </div>
           <div class="rocket-card-actions">
-            <%= link_to "Book this rocket", rocket_path(rocket), class: "btn btn-flat", target: :_blank %>
+            <%= link_to "Delete", rocket_path(rocket.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
           </div>
         </div>
       </div>

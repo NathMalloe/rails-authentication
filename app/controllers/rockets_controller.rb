@@ -34,11 +34,6 @@ class RocketsController < ApplicationController
     end
   end
 
-  def delete
-    @rocket.destroy
-    redirect_to rockets_path, status: :see_other
-  end
-
   def show
     @booking = Booking.new
     @marker = [{
@@ -47,6 +42,17 @@ class RocketsController < ApplicationController
       info_window_html: render_to_string(partial: "info_window", locals: {rocket: @rocket}),
       marker_html: render_to_string(partial: "marker")
     }]
+  end
+
+  def my_rockets
+    @rockets = Rocket.where(user: current_user)
+    render "my_rockets"
+  end
+
+  def destroy
+    @rocket.destroy
+    puts "hello"
+    redirect_to my_rockets_path, status: :see_other
   end
 
   private
