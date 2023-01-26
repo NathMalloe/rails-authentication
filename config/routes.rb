@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [:index, :show]
 
+  get "/my_rockets", to: "rockets#my_rockets"
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # get "rockets", to: "rockets#index"
   # post "/rockets/new", to: "rockets#create"

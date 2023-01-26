@@ -4,17 +4,18 @@
 
       <div class="cards">
           <h1>My Bookings as an Owner of Rockets</h1>
-          <%= render @booking_list_as_owner %>
-
-      </div>
-
-      <div rocket-card>
-          <h1> Below, find ...</h1>
+          <%= @booking_list_as_owner %>
       </div>
 
       <div class="cards">
+        <div>
           <h1>My trips as a Traveller</h1>
-          <%= render @booking_list_as_traveller %>
+        </div>
+        <div class="flex">
+          <% @booking_list_as_traveller.each do |booking| %>
+            <%= render booking %>
+            <% end %>
+        </div>
       </div>
     </div>
   </div>
