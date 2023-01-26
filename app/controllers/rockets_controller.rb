@@ -37,11 +37,11 @@ class RocketsController < ApplicationController
   def show
     @booking = Booking.new
     @marker = [{
-        lat: @rocket.latitude,
-        lng: @rocket.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {rocket: @rocket}),
-        marker_html: render_to_string(partial: "marker")
-      }]
+      lat: @rocket.latitude,
+      lng: @rocket.longitude,
+      info_window_html: render_to_string(partial: "info_window", locals: {rocket: @rocket}),
+      marker_html: render_to_string(partial: "marker")
+    }]
   end
 
   private
@@ -51,6 +51,6 @@ class RocketsController < ApplicationController
   end
 
   def rocket_params
-    params.require(:rocket).permit(:name, :destination, :description, :price_per_earthday, :rating, :user) # Adding picture url ?
+    params.require(:rocket).permit(:name, :destination, :description, :price_per_earthday, :rating, :user, :photo) # Adding picture url ?
   end
 end

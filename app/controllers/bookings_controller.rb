@@ -12,6 +12,12 @@ class BookingsController < ApplicationController
   def show
     @rocket = Rocket.find(params[:id])
     @booking = Booking.find(params[:id])
+    @marker = [{
+      lat: @rocket.latitude,
+      lng: @rocket.longitude,
+      # info_window_html: render_to_string(partial: "info_window", locals: {rocket: @rocket}),
+      # marker_html: render_to_string(partial: "marker")
+    }]
   end
 
   def new
