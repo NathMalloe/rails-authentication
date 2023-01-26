@@ -1,4 +1,4 @@
-# module RocketConcern
+module RocketConcern
 #     def booked_dates
 #       # renvoie un array d'array des dates de debut et de fin de tous les bookings de la rocket
 #       bookings.pluck(:start_date, :end_date)
@@ -25,4 +25,4 @@
 #       disable: booked_dates_json_objects
 #       }
 #     end
-#   end
+end
