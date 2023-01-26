@@ -3,15 +3,20 @@ class RocketsController < ApplicationController
   before_action :set_rocket, only: [:show, :edit, :update, :destroy]
 
   def index
-    @rockets = Rocket.all
-    @markers = @rockets.geocoded.map do |rocket|
-      {
-        lat: rocket.latitude,
-        lng: rocket.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {rocket: rocket}),
-        marker_html: render_to_string(partial: "marker")
-      }
+    Rocket.algolia_reindex!
+    if params[:query].present?
+      @rockets = Rocket.search(params[:query])
+    else
+      @rockets = Rocket.all
     end
+    # @markers = @rockets.geocoded.map do |rocket|
+    #   {
+    #     lat: rocket.latitude,
+    #     lng: rocket.longitude,
+    #     info_window_html: render_to_string(partial: "info_window", locals: {rocket: rocket}),
+    #     marker_html: render_to_string(partial: "marker")
+    #   }
+    # end
   end
 
   def new

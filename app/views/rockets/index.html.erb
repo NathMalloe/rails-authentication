@@ -4,7 +4,20 @@
       <h1>Best Rockets to Rent</h1>
     </div>
   </div>
-
+  <%# <div>
+    <form class="form-inline d-flex">
+      <input type="text" class="form-control" placeholder="Search for a Rocket..." id="search-input">
+      <button type="submit" class="btn btn-light pl-2">Search</button>
+    </form>
+  </div> %>
+  <%= form_with url: rockets_path, method: :get, class: "d-flex m-4" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search for a rocket"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
   <div class="row">
     <div class="col">
       <% if @query %>
