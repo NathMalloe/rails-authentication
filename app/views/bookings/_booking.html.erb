@@ -2,15 +2,13 @@
         <%= cl_image_tag booking.rocket.photo.key, height: 300, width: 400, crop: :fill %>
         <div class="card-trip-infos">
           <div>
-            <h2>Recap of your booking</h2>
-            <h2><%= booking.rocket.name %></h2>
-             <p><%= booking.rocket.description %></p>
-             <p>Start date : <%= booking.start_date %></p>
-             <p>End date : <%= booking.end_date %></p>
-             <p>Total duration of your trip : <%= booking.end_date - booking.start_date + 1 %></p>
+            <h1>Recap of your booking :</h1>
+             <h3>Start date : <%= booking.start_date %></h3>
+             <h3>End date : <%= booking.end_date %></h3>
+             <h3>Total duration of your trip : <%= booking.end_date - booking.start_date + 1 %></h3>
+            <h3 class="rocket-show-destination">Going to : <%= booking.rocket.destination %></h3>
           </div>
-          <h2 class="card-trip-pricing">Total StarCoins : <%= booking.price %></h2>
-          <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
+          <h3 class="card-trip-pricing">Total StarCoins : <%= booking.price %></h3>
           <h2><%= cl_image_tag booking.rocket.user.photo.key, height: 40, width: 40 %>
         </div>
       </div>

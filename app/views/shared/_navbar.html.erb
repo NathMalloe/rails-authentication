@@ -17,6 +17,9 @@
           <li class="nav-item">
             <%= link_to "My Bookings", bookings_path, class: "nav-link" %>
           </li>
+          <li class="nav-item active">
+            <%= link_to "Rent your Rocket", new_rocket_path, class: "nav-link" %>
+          </li>
           <li class="nav-item dropdown">
               <%# <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
