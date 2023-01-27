@@ -36,7 +36,7 @@ file = URI.open("https://res.cloudinary.com/dton44gcy/image/upload/v1674371385/s
 ariane_4.photo.attach(io: file, filename: "ariane4.png", content_type: "image/jpg")
 
 file = URI.open("https://res.cloudinary.com/dton44gcy/image/upload/v1674248768/ybxnuoodebwxmnzewjyy.jpg")
-amine.photo.attach(io: file, filename: "jpd_profile.jpg", content_type: "image/jpg")
+amine.photo.attach(io: file, filename: "amine_profile.jpg", content_type: "image/jpg")
 
 
 ariane_5 = Rocket.create!({ name: "Nova", destination: "Saturn", description: "Nova is a premium multiple guests rocket, with a restaurant module and a chef", price_per_earthday: "5000$", rating: 4.6, user: amine, address: "15 Rue René Leroy, Niort, France" })
@@ -48,7 +48,7 @@ file = URI.open("https://res.cloudinary.com/dton44gcy/image/upload/v1674371384/s
 ariane_6.photo.attach(io: file, filename: "ariane6.png", content_type: "image/jpg")
 
 file = URI.open("https://res.cloudinary.com/dton44gcy/image/upload/v1674371244/yoda_profile_iis5yg.jpg")
-nathanael.photo.attach(io: file, filename: "jpd_profile.jpg", content_type: "image/jpg")
+nathanael.photo.attach(io: file, filename: "yoda_profile.jpg", content_type: "image/jpg")
 
 
 ariane_7 = Rocket.create!({ name: "Vega", destination: "Moon", description: "Vega is a large rocket, with high capacity, a restaurant, a night-club and DJ", price_per_earthday: "8000$", rating: 4.3, user: nathanael, address: "85 rue La Boetie, Paris, France" })
@@ -59,8 +59,8 @@ ariane_8 = Rocket.create!({ name: "Altaïr", destination: "Mars", description: "
 file = URI.open("https://res.cloudinary.com/dton44gcy/image/upload/v1674371385/pexels-spacex-23769_difmrc.jpg")
 ariane_8.photo.attach(io: file, filename: "ariane8.png", content_type: "image/jpg")
 
-file = URI.open("https://res.cloudinary.com/dton44gcy/image/upload/v1674371160/einstein_profile_bhlaus.jpg")
-mohamed.photo.attach(io: file, filename: "jpd_profile.jpg", content_type: "image/jpg")
+file = URI.open("https://res.cloudinary.com/dton44gcy/image/upload/v1674839485/einstein_profile_pxl1ji.jpg")
+mohamed.photo.attach(io: file, filename: "einstein_profile.jpg", content_type: "image/jpg")
 
 
 ariane_9 = Rocket.create!({ name: "Icarus", destination: "Pluton", description: "Icarus is a premium rocket, with medium capacity, nice furniture, a night-club and DJ", price_per_earthday: "7000$", rating: 4.6, user: mohamed, address: "7 Rue de l'Amazonie, Nantes, France" })
