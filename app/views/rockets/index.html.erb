@@ -43,12 +43,13 @@
             <% if rocket.photo.key %>
               <%= cl_image_tag(rocket.photo.key, width: 400, height: 180, crop: :fill) %>
             <% end %>
+            <%= cl_image_tag(rocket.user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
           </div>
           <div class="rocket-card-content">
             <div class="rocket-card-title">
               <h4><%= rocket.name %></h4>
               <div>
-                Owner: <%= rocket.user.first_name%><%= cl_image_tag(rocket.user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+                Owner: <%= rocket.user.first_name%>
               </div>
             </div>
             <p>Destination: <%= rocket.destination %></p>

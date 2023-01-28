@@ -44,6 +44,15 @@ class RocketsController < ApplicationController
 
   def my_rockets
     @rockets = Rocket.where(user: current_user)
+    @markers = @rockets.map do |rocket|
+      next unless rocket.latitude.present? && rocket.longitude.present?
+      {
+        lat: rocket.latitude,
+        lng: rocket.longitude,
+        info_window_html: render_to_string(partial: "rockets/info_window", locals: { rocket: rocket }),
+        marker_html: render_to_string(partial: "rockets/marker")
+      }
+    end
     render "my_rockets"
   end
 
