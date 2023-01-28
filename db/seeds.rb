@@ -63,10 +63,10 @@ file = URI.open("https://res.cloudinary.com/dton44gcy/image/upload/v1674839485/e
 mohamed.photo.attach(io: file, filename: "einstein_profile.jpg", content_type: "image/jpg")
 
 
-ariane_9 = Rocket.create!({ name: "Icarus", destination: "Pluton", description: "Icarus is a premium rocket, with medium capacity, nice furniture, a night-club and DJ", price_per_earthday: "7000$", rating: 4.6, user: mohamed, address: "7 Rue de l'Amazonie, Nantes, France" })
+ariane_9 = Rocket.create!({ name: "Icarus", destination: "Pluton", description: "Icarus is a premium rocket, with medium capacity, nice furniture, a night-club and DJ", price_per_earthday: "7000$", rating: 4.6, user: amine, address: "7 Rue de l'Amazonie, Nantes, France" })
 file = URI.open("https://res.cloudinary.com/dton44gcy/image/upload/v1674371385/pexels-pixabay-355906_mgpmti.jpg")
 ariane_9.photo.attach(io: file, filename: "ariane9.png", content_type: "image/jpg")
 
-  ariane_10 = Rocket.create!({ name: "Orion", destination: "Venus", description: "Orion is a luxury rocket, with high capacity, a high-end restaurant, a night-club and a Spa", price_per_earthday: "6000$", rating: 4.8, user: mohamed, address: "45 Rue Victor Hugo, Montrouge, France" })
+  ariane_10 = Rocket.create!({ name: "Orion", destination: "Venus", description: "Orion is a luxury rocket, with high capacity, a high-end restaurant, a night-club and a Spa", price_per_earthday: "6000$", rating: 4.8, user: amine, address: "45 Rue Victor Hugo, Montrouge, France" })
 file = URI.open("https://res.cloudinary.com/dton44gcy/image/upload/v1674371386/pexels-matheus-bertelli-3697826_vi4ehi.jpg")
 ariane_10.photo.attach(io: file, filename: "ariane10.png", content_type: "image/jpg")
