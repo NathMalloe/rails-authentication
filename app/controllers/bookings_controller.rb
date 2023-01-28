@@ -12,16 +12,23 @@ class BookingsController < ApplicationController
   def show
     @rocket = Rocket.find(params[:id])
     @booking = Booking.find(params[:id])
-    @marker = [{
-      lat: @rocket.latitude,
-      lng: @rocket.longitude,
-      # info_window_html: render_to_string(partial: "info_window", locals: {rocket: @rocket}),
-      # marker_html: render_to_string(partial: "marker")
-    }]
+    # @markers = [{
+    #   lat: @rocket.latitude,
+    #   lng: @rocket.longitude,
+    #   info_window_html: render_to_string(partial: "info_window", locals: {rocket: @rocket}),
+    #   marker_html: render_to_string(partial: "marker")
+    # }]
+    # @markers = @rocket.geocoded.map do |rocket|
+    #   {
+    #     lat: rocket.latitude,
+    #     lng: rocket.longitude,
+        # info_window_html: render_to_string(partial: "info_window", locals: {rocket: rocket}),
+        # marker_html: render_to_string(partial: "marker")
+      # }
+    # end
   end
 
   def new
-    # @rocket = Rocket.find(params[:rocket_id])
     @booking = Booking.new
   end
 
@@ -40,8 +47,6 @@ class BookingsController < ApplicationController
   end
 
   def total_price(booking, rocket)
-    # @rocket = Rocket.find(params[:rocket_id])
-    # @booking = Booking.find(params[:booking_id])
     total_days = booking.end_date - booking.start_date + 1
     return total_days * rocket.price_per_earthday
   end
