@@ -1,13 +1,13 @@
 <div class="container-show">
   <div class="rocket-show-card">
-    <h1>You booked <%= @rocket.name %> rocket. Thanks!!</h1>
+    <h1>You booked <%= @booking.rocket.name %> rocket. Thanks!!</h1>
     <%= render @booking %>
   </div>
   <div class="rocket-show-card">
   <h3>This rocket offers a unique experience :</h3>
-    <p><%= @rocket.description %></p>
+    <p><%= @booking.rocket.description %></p>
   </div>
-  
+
   <div style="width: 100%; height: 250px;"
     data-controller="map"
     data-map-markers-value="<%= @marker.to_json %>"
