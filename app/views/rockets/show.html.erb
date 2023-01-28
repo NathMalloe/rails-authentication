@@ -21,11 +21,12 @@
       <div class="rocket-show-card">
         <h1>Book this rocket!</h1>
 
-          <%= simple_form_for [@rocket, @booking], html: { data: { controller: 'flatpickr', flatpickr_dates_value: { disable: ["2023-01-25"] } } } do |f| %>
+          <%= simple_form_for [@rocket, @booking], html: { data: { controller: 'flatpickr', flatpickr_dates_value: @rocket.flatpickr_booked_dates_object } } do |f| %>
+            <div class="d-flex">
+              <%= f.input :start_date, as: :string, label:false, input_html: { data: {flatpickr_target: 'startDateInput', }} %>
 
-            <%= f.input :start_date, as: :string, label:"book a period", input_html: { data: {flatpickr_target: 'startDateInput', }} %>
-
-            <%= f.input :end_date, as: :string, label: false, input_html: { data: { flatpickr_target: 'endDateInput', }} %>
+              <%= f.input :end_date, as: :string, label: false, input_html: { data: { flatpickr_target: 'endDateInput', }} %>
+            </div>
 
             <%= f.submit 'Book now!', class: 'btn btn-primary' %>
           <% end %>
