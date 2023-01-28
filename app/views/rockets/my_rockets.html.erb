@@ -40,7 +40,7 @@
             </div>
           </div>
           <div class="rocket-card-actions">
-            <%= link_to "Delete", rocket_path(rocket.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+            <%= link_to "Delete", rocket_path(rocket.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-flat" %>
           </div>
         </div>
       </div>

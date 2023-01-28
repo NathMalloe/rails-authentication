@@ -1,6 +1,9 @@
 
 <div class="card-trip">
-  <%= cl_image_tag booking.rocket.photo.key, height: 200, width: 200, crop: :fill %>
+  <div class="rocket-card-image">
+    <%= cl_image_tag booking.rocket.photo.key, height: 200, width: 200, crop: :fill %>
+    <%= cl_image_tag booking.rocket.user.photo.key, height: 40, width: 40, radius:"max"%>
+  </div>
   <div class="card-trip-infos">
     <div>
       <h2>Recap of your booking :</h2>
@@ -14,8 +17,6 @@
     </div>
     <div>
       <h2 class="card-trip-pricing">Total StarCoins : <b><%= booking.price %></b></h2>
-      <h2><%= cl_image_tag booking.rocket.user.photo.key, height: 40, width: 40 %>
     </div>
   </div>
 </div>
-
