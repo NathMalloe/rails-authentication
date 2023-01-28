@@ -18,14 +18,14 @@ class BookingsController < ApplicationController
     #   info_window_html: render_to_string(partial: "info_window", locals: {rocket: @rocket}),
     #   marker_html: render_to_string(partial: "marker")
     # }]
-    @markers = @rocket.geocoded.map do |rocket|
-      {
-        lat: rocket.latitude,
-        lng: rocket.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {rocket: rocket}),
-        marker_html: render_to_string(partial: "marker")
-      }
-    end
+    # @markers = @rocket.geocoded.map do |rocket|
+    #   {
+    #     lat: rocket.latitude,
+    #     lng: rocket.longitude,
+        # info_window_html: render_to_string(partial: "info_window", locals: {rocket: rocket}),
+        # marker_html: render_to_string(partial: "marker")
+      # }
+    # end
   end
 
   def new
