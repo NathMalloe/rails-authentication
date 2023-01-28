@@ -25,7 +25,7 @@
 
             <%= f.input :start_date, as: :string, label:"book a period", input_html: { data: {flatpickr_target: 'startDateInput', }} %>
 
-            <%= f.input :end_date, as: :string, label: false, input_html: { class: 'd-none', data: { flatpickr_target: 'endDateInput', }} %>
+            <%= f.input :end_date, as: :string, label: false, input_html: { data: { flatpickr_target: 'endDateInput', }} %>
 
             <%= f.submit 'Book now!', class: 'btn btn-primary' %>
           <% end %>
