@@ -7,15 +7,16 @@ class RocketsController < ApplicationController
 
     @rockets = Rocket.all
     @rockets = @rockets.search(params[:query], filters: price_filter)
+    @markers = @rockets.map do |rocket|
+      next unless rocket.latitude.present? && rocket.longitude.present?
 
-    # @markers = @rockets.geocoded.map do |rocket|
-    #   {
-    #     lat: rocket.latitude,
-    #     lng: rocket.longitude,
-    #     info_window_html: render_to_string(partial: "info_window", locals: {rocket: rocket}),
-    #     marker_html: render_to_string(partial: "marker")
-    #   }
-    #end
+      {
+        lat: rocket.latitude,
+        lng: rocket.longitude,
+        info_window_html: render_to_string(partial: "rockets/info_window", locals: { rocket: rocket }),
+        marker_html: render_to_string(partial: "rockets/marker")
+      }
+    end
   end
 
   def new
