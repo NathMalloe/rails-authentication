@@ -3,7 +3,6 @@
     <h1>You booked <%= @rocket.name %> rocket. Thanks!!</h1>
     <%= render @booking %>
   </div>
-
   <div class="rocket-show-card">
   <h3>This rocket offers a unique experience :</h3>
     <p><%= @rocket.description %></p>
@@ -14,4 +13,4 @@
     data-map-markers-value="<%= @marker.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-</div>
+</div
