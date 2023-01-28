@@ -4,11 +4,10 @@ class RocketsController < ApplicationController
 
   def index
     Rocket.algolia_reindex!
-    if params[:query].present?
-      @rockets = Rocket.search(params[:query])
-    else
-      @rockets = Rocket.all
-    end
+
+    @rockets = Rocket.all
+    @rockets = @rockets.search(params[:query], filters: price_filter)
+
     # @markers = @rockets.geocoded.map do |rocket|
     #   {
     #     lat: rocket.latitude,
@@ -16,7 +15,7 @@ class RocketsController < ApplicationController
     #     info_window_html: render_to_string(partial: "info_window", locals: {rocket: rocket}),
     #     marker_html: render_to_string(partial: "marker")
     #   }
-    # end
+    #end
   end
 
   def new
@@ -57,5 +56,12 @@ class RocketsController < ApplicationController
 
   def rocket_params
     params.require(:rocket).permit(:name, :destination, :description, :price_per_earthday, :rating, :user, :photo) # Adding picture url ?
+  end
+
+  def price_filter
+    filters = []
+    filters << "price_per_earthday >= #{params[:min_price]}" if params[:min_price].present?
+    filters << "price_per_earthday <= #{params[:max_price]}" if params[:max_price].present?
+    filters.join(" AND ")
   end
 end
