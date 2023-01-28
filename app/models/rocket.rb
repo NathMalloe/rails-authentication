@@ -13,9 +13,7 @@ class Rocket < ApplicationRecord
 
   include AlgoliaSearch
 
-  #Rocket.algolia_reindex!
-
   algoliasearch do
-    attribute :name, :description, :destination
+    attribute :name, :description, :destination, :price_per_earthday
   end
 end

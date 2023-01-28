@@ -4,24 +4,31 @@
       <h1>Best Rockets to Rent</h1>
     </div>
   </div>
-  <%# <div>
-    <form class="form-inline d-flex">
-      <input type="text" class="form-control" placeholder="Search for a Rocket..." id="search-input">
-      <button type="submit" class="btn btn-light pl-2">Search</button>
-    </form>
-  </div> %>
   <%= form_with url: rockets_path, method: :get, class: "d-flex m-4" do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
-    placeholder: "Search for a rocket"
+    placeholder: "Where to take off ?"
   %>
+
+  <%= text_field_tag :min_price,
+    params[:min_price],
+    class: "form-control",
+    placeholder: "Min price?"
+  %>
+
+  <%= text_field_tag :max_price,
+    params[:max_price],
+    class: "form-control",
+    placeholder: "Max price?"
+  %>
+
   <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
   <div class="row">
     <div class="col">
       <% if @query %>
-        <p>You searched for <strong><%= @query %></strong>. We found <%= @rockets.count %> rockets out of our <%= Rocket.count %> on our website.</p>
+        <p>You searched for rockets going to<strong><%= @query %></strong>. We found <%= @rockets.count %> rockets out of our <%= Rocket.count %> on our website.</p>
       <% else %>
         <p>We found <%= @rockets.count %> rockets out of <%= Rocket.count %> on our website.</p>
       <% end %>
