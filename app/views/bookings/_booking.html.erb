@@ -1,15 +1,19 @@
-      <div class="card-trip">
-        <%= cl_image_tag booking.rocket.photo.key, height: 200, width: 200, crop: :fill %>
-        <div class="card-trip-infos">
-          <div>
-            <h1>Recap of your booking :</h1>
-            <h3>Name of the Rocket that you booked : <%= booking.rocket.name %></h3>
-             <h3>Start date : <%= booking.start_date %></h3>
-             <h3>End date : <%= booking.end_date %></h3>
-             <h3>Total duration of your trip : <%= booking.end_date - booking.start_date + 1 %></h3>
-            <h3 class="rocket-show-destination">Going to : <%= booking.rocket.destination %></h3>
-          </div>
-          <h3 class="card-trip-pricing">Total StarCoins : <%= booking.price %></h3>
-          <h2><%= cl_image_tag booking.rocket.user.photo.key, height: 40, width: 40 %>
-        </div>
-      </div>
+<div class="card-trip">
+  <%= cl_image_tag booking.rocket.photo.key, height: 200, width: 200, crop: :fill %>
+  <div class="card-trip-infos">
+    <div>
+      <h2>Recap of your booking :</h2>
+      <ul>
+        <li>Rocket: <b><%= booking.rocket.name %></b></li>
+        <li>Your trip begins: <b><%= booking.start_date %></b></li>
+        <li>You will be back to eath at: <b><%= booking.end_date %></b></li>
+        <li>You will be away: <b><%= booking.end_date - booking.start_date + 1 %> days</b></li>
+        <li>Going to: <b><%= booking.rocket.destination %></b></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="card-trip-pricing">Total StarCoins : <b><%= booking.price %></b></h2>
+      <h2><%= cl_image_tag booking.rocket.user.photo.key, height: 40, width: 40 %>
+    </div>
+  </div>
+</div>
