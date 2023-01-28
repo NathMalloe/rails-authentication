@@ -21,20 +21,27 @@ export default class extends Controller {
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
-      const popup = new mapboxgl.Popup().setHTML(marker.info_window_html)
-      const customMarker = document.createElement("div")
-      customMarker.innerHTML = marker.marker_html
+      if (marker && marker.info_window_html) {
+        console.log(marker, marker.info_window_html)
+        const popup = new mapboxgl.Popup().setHTML(marker.info_window_html)
+        const customMarker = document.createElement("div")
+        customMarker.innerHTML = marker.marker_html
 
-      new mapboxgl.Marker(customMarker)
-        .setLngLat([ marker.lng, marker.lat ])
-        .setPopup(popup)
-        .addTo(this.map)
+        new mapboxgl.Marker(customMarker)
+          .setLngLat([ marker.lng, marker.lat ])
+          .setPopup(popup)
+          .addTo(this.map)
+      }
     });
   }
 
   #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
-    this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
+    this.markersValue.forEach((marker) => {
+      if (marker) {
+        bounds.extend([ marker.lng, marker.lat ])
+      }
+    })
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
   }
 }
