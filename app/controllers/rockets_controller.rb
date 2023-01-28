@@ -4,12 +4,10 @@ class RocketsController < ApplicationController
 
   def index
     Rocket.algolia_reindex!
-
     @rockets = Rocket.all
     @rockets = @rockets.search(params[:query], filters: price_filter)
     @markers = @rockets.map do |rocket|
       next unless rocket.latitude.present? && rocket.longitude.present?
-
       {
         lat: rocket.latitude,
         lng: rocket.longitude,

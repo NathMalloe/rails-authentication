@@ -1,21 +1,28 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col-12">
-
-      <div class="cards">
-          <h1>My Bookings as an Owner of Rockets</h1>
-          <%= @booking_list_as_owner %>
+      <div>
+        <h1>My Bookings as an Owner of Rockets</h1>
       </div>
-
-      <div class="cards">
-        <div>
-          <h1>My trips as a Traveller</h1>
-        </div>
-        <div class="flex">
-          <% @booking_list_as_traveller.each do |booking| %>
+      <div class="row">
+        <% @booking_list_as_owner.each do |booking| %>
+          <div class="col-md-4">
             <%= render booking %>
-            <% end %>
-        </div>
+          </div>
+        <% end %>
+      </div>
+      <div>
+        <%= @booking_list_as_owner %>
+      </div>
+      <div>
+        <h1>My trips as a Traveller</h1>
+      </div>
+      <div class="row">
+        <% @booking_list_as_traveller.each do |booking| %>
+          <div class="col-md-4">
+            <%= render booking %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
