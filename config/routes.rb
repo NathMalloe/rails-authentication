@@ -18,10 +18,10 @@ Rails.application.routes.draw do
   # delete "/rockets/rocket_id", to: "rockets#delete"
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :rockets, only: [:index, :show, :new, :create, :destroy] do
-    resources :bookings, only: [:new, :create]
-  end
-  resources :bookings, only: [:index, :show]
+  # resources :rockets, only: [:index, :show, :new, :create, :destroy] do
+  #   resources :bookings, only: [:new, :create]
+  # end
+  # resources :bookings, only: [:index, :show]
 
   get '/search', to: 'search#index'
 
