@@ -9,7 +9,7 @@ export default class extends Controller {
   static targets = [ 'startDateInput', 'endDateInput' ]
 
   connect() {
-    // this.initFlatPickr()
+    this.#initFlatPickr()
     console.log("Hello")
     console.log(this.datesValue)
     flatpickr(this.startDateInputTarget, {
@@ -19,19 +19,19 @@ export default class extends Controller {
     })
   }
 
-  // #initFlatPickr() {
-  //   flatpickr(".datepicker", this.#options());
-  // }
+  #initFlatPickr() {
+    flatpickr(".datepicker", this.#options());
+  }
 
-  // #options() {
-  //   return {
-  //   ...this.#parsedBookedDates(),
-  //   enableTime: true,
-  //   minDate: new Date(),
-  //   }
-  // }
+  #options() {
+    return {
+    ...this.#parsedBookedDates(),
+    enableTime: true,
+    minDate: new Date(),
+    }
+  }
 
-  // #parsedBookedDates() {
-  //   return this.datesValue
-  // }
+  #parsedBookedDates() {
+    return this.datesValue
+  }
 }
